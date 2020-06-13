@@ -1,0 +1,55 @@
+<launch>
+  <arg
+    name="model" />
+  <arg
+    name="gui"
+    default="False" />
+
+  <arg name="publish_rate" default="100.0" />
+
+  <arg name="condition" default="true" />
+  <arg name="condition1" default="false" />
+
+  <rosparam>
+    a: 1 
+    b: 2
+  </rosparam>
+
+  <param
+    name="robot_description"
+    textfile="$(find faraday_support)/urdf/faraday.urdf" />
+
+  <param name="use_gui" value="$(arg gui)" />
+  <node
+    name="faraday_state_publisher"
+    pkg="faraday_state_publisher"
+    type="faraday_state_publisher_node">
+    <remap from="joint_states" to="zzz/rrr/joint_states" />
+  </node>
+
+  <node
+    name="robot_state_publisher"
+    pkg="robot_state_publisher"
+    type="state_publisher" />
+
+  <group ns="zzz" unless="$(arg condition1)">
+  <!-- <group ns="zzz" if="$(arg condition)"> -->
+  <!-- <group ns="zzz" if="1"> -->
+    <node
+      name="faraday_simulator"
+      pkg="faraday_simulator"
+      type="faraday_simulator_node"
+      output="screen" ns="rrr">  
+      <param name="rate" value="$(arg publish_rate)" type="double" />
+      <rosparam param="initial_position">[227.139, 225.652, 225.652, 227.139, 0.0]</rosparam>
+      <remap from="joint_path_command" to="/joint_path_command" />
+    </node>
+  </group>
+
+  <node
+    name="rviz"
+    pkg="rviz"
+    type="rviz"
+    args="-d $(find faraday_support)/urdf.rviz" />
+
+</launch>

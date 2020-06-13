@@ -1,0 +1,86 @@
+digraph G {
+node [shape=box];
+"world" [label="world"];
+"base_link" [label="base_link"];
+"limb1_link1" [label="limb1_link1"];
+"limb1_link2" [label="limb1_link2"];
+"limb1_link3" [label="limb1_link3"];
+"limb1_link4" [label="limb1_link4"];
+"limb1_link5" [label="limb1_link5"];
+"limb2_link1" [label="limb2_link1"];
+"limb2_link2" [label="limb2_link2"];
+"limb2_link3" [label="limb2_link3"];
+"limb2_link4" [label="limb2_link4"];
+"limb2_link5" [label="limb2_link5"];
+"limb3_link1" [label="limb3_link1"];
+"limb3_link2" [label="limb3_link2"];
+"limb3_link3" [label="limb3_link3"];
+"limb3_link4" [label="limb3_link4"];
+"limb3_link5" [label="limb3_link5"];
+"limb4_link1" [label="limb4_link1"];
+"limb4_link2" [label="limb4_link2"];
+"limb4_link3" [label="limb4_link3"];
+"limb4_link4" [label="limb4_link4"];
+"limb4_link5" [label="limb4_link5"];
+"limb5_link1" [label="limb5_link1"];
+"limb5_link2" [label="limb5_link2"];
+"limb5_link3" [label="limb5_link3"];
+"limb5_link4" [label="limb5_link4"];
+"move_platform" [label="move_platform"];
+"motor_spindle" [label="motor_spindle"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"world" -> "world_to_base_link" [label="xyz: 0 -0.01553 0.604 \nrpy: -3.14159 -0 0"]
+"world_to_base_link" -> "base_link"
+"base_link" -> "limb1_link1_joint" [label="xyz: 0.257 0.12829 0.087145 \nrpy: 0 0 -2.0944"]
+"limb1_link1_joint" -> "limb1_link1"
+"limb1_link1" -> "limb1_link2_joint" [label="xyz: 0.058 0 0 \nrpy: 1.5708 -0.67413 1.5708"]
+"limb1_link2_joint" -> "limb1_link2"
+"limb1_link2" -> "limb1_link3_joint" [label="xyz: 0 0 0 \nrpy: -1.011 1.5812e-17 9.992e-16"]
+"limb1_link3_joint" -> "limb1_link3"
+"limb1_link3" -> "limb1_link4_joint" [label="xyz: 0 0 0.246 \nrpy: -7.7716e-16 4.4409e-16 -1.3715"]
+"limb1_link4_joint" -> "limb1_link4"
+"limb1_link4" -> "limb1_link5_joint" [label="xyz: 0 0 0 \nrpy: 2.3798 2.77556e-17 3.14159"]
+"limb1_link5_joint" -> "limb1_link5"
+"base_link" -> "limb2_link1_joint" [label="xyz: 0.24382 -0.17253 0.085659 \nrpy: 0 -0 2.618"]
+"limb2_link1_joint" -> "limb2_link1"
+"limb2_link1" -> "limb2_link2_joint" [label="xyz: 0.058 0 0 \nrpy: 1.5708 -0.16001 1.5708"]
+"limb2_link2_joint" -> "limb2_link2"
+"limb2_link2" -> "limb2_link3_joint" [label="xyz: 0 0 0 \nrpy: -0.74327 -1.4303e-15 1.9429e-16"]
+"limb2_link3_joint" -> "limb2_link3"
+"limb2_link3" -> "limb2_link4_joint" [label="xyz: 0 0 0.246 \nrpy: 1.1102e-16 -0 0.65345"]
+"limb2_link4_joint" -> "limb2_link4"
+"limb2_link4" -> "limb2_link5_joint" [label="xyz: 0 0 0 \nrpy: 2.1941 1.1102e-16 -3.14159"]
+"limb2_link5_joint" -> "limb2_link5"
+"base_link" -> "limb3_link1_joint" [label="xyz: -0.24382 -0.17253 0.085659 \nrpy: 0 -0 0.5236"]
+"limb3_link1_joint" -> "limb3_link1"
+"limb3_link1" -> "limb3_link2_joint" [label="xyz: 0.058 0 0 \nrpy: -1.5708 -0.16001 -1.5708"]
+"limb3_link2_joint" -> "limb3_link2"
+"limb3_link2" -> "limb3_link3_joint" [label="xyz: 0 0 0 \nrpy: 0.74327 -9.4524e-16 2.7756e-17"]
+"limb3_link3_joint" -> "limb3_link3"
+"limb3_link3" -> "limb3_link4_joint" [label="xyz: 0 0 0.246 \nrpy: -5.5511e-16 -6.1062e-16 -0.65345"]
+"limb3_link4_joint" -> "limb3_link4"
+"limb3_link4" -> "limb3_link5_joint" [label="xyz: 0 0 0 \nrpy: 2.1941 4.4409e-16 1.1102e-16"]
+"limb3_link5_joint" -> "limb3_link5"
+"base_link" -> "limb4_link1_joint" [label="xyz: -0.257 0.12829 0.087145 \nrpy: 0 0 -1.0472"]
+"limb4_link1_joint" -> "limb4_link1"
+"limb4_link1" -> "limb4_link2_joint" [label="xyz: 0.058 0 0 \nrpy: 1.5708 0.67413 1.5708"]
+"limb4_link2_joint" -> "limb4_link2"
+"limb4_link2" -> "limb4_link3_joint" [label="xyz: 0 0 0 \nrpy: 1.011 -6.6972e-16 3.14159"]
+"limb4_link3_joint" -> "limb4_link3"
+"limb4_link3" -> "limb4_link4_joint" [label="xyz: 0 0 0.246 \nrpy: -2.2204e-16 -1.3878e-16 1.3715"]
+"limb4_link4_joint" -> "limb4_link4"
+"limb4_link4" -> "limb4_link5_joint" [label="xyz: 0 0 0 \nrpy: 2.3798 3.3307e-16 3.6082e-16"]
+"limb4_link5_joint" -> "limb4_link5"
+"base_link" -> "limb5_link1_joint" [label="xyz: -0.175 -0.09 -0.046 \nrpy: 0 1.5708 1.5708"]
+"limb5_link1_joint" -> "limb5_link1"
+"limb5_link1" -> "limb5_link2_joint" [label="xyz: 0.0475 -0.175 0.021 \nrpy: 0 -1.5708 -1.5708"]
+"limb5_link2_joint" -> "limb5_link2"
+"limb5_link2" -> "limb5_link3_joint" [label="xyz: 0.036 0.0275 0 \nrpy: 1.5708 -6.123e-17 -6.123e-17"]
+"limb5_link3_joint" -> "limb5_link3"
+"limb5_link3" -> "limb5_link4_joint" [label="xyz: 0.033 0 0.265 \nrpy: 1.5708 -0 -6.123e-17"]
+"limb5_link4_joint" -> "limb5_link4"
+"base_link" -> "move_platform_joint" [label="xyz: 0 0 0.25 \nrpy: 0 -0 0"]
+"move_platform_joint" -> "move_platform"
+"move_platform" -> "motor_spindle_joint" [label="xyz: 0 0 0.092 \nrpy: 0 -0 1.1838e-15"]
+"motor_spindle_joint" -> "motor_spindle"
+}

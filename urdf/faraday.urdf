@@ -1,0 +1,1573 @@
+<?xml version="1.0" ?>
+<robot
+  name="Faraday">
+
+  <link name="world" />
+
+  <joint name="world_to_base_link" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+    <origin xyz="0 -0.01553 0.604" rpy="3.141592654 0 0"/>
+  </joint>
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0065986 -0.032962 0.49853"
+        rpy="0 0 0" />
+      <mass
+        value="12.551" />
+      <inertia
+        ixx="5.8372"
+        ixy="-0.020361"
+        ixz="-0.034318"
+        iyy="6.0197"
+        iyz="0.0069877"
+        izz="0.44893" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.6 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!the limb1!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+  <joint
+    name="limb1_link1_joint"
+    type="prismatic">
+    <origin
+      xyz="0.257 0.12829 0.087145"
+      rpy="0 0 -2.0944" />
+    <parent
+      link="base_link" />
+    <child
+      link="limb1_link1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.0456446"
+      upper="0.1758554"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+  <link
+    name="limb1_link1">
+    <inertial>
+      <origin
+        xyz="0.0075301 -2.5935E-05 9.6255E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.047388" />
+      <inertia
+        ixx="2.2595E-10"
+        ixy="-7.5456E-09"
+        ixz="2.8004E-08"
+        iyy="4.1578E-06"
+        iyz="5.676E-11"
+        izz="4.1576E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb1_link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb1_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="limb1_link2_joint"
+    type="continuous">
+    <origin
+      xyz="0.058 0 0"
+      rpy="1.5708 -0.67413 1.5708" />
+    <parent
+      link="limb1_link1" />
+    <child
+      link="limb1_link2" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+
+  <link
+    name="limb1_link2">
+    <inertial>
+      <origin
+        xyz="5.5511E-17 1.6653E-16 -0.0083909"
+        rpy="0 0 0" />
+      <mass
+        value="0.019958" />
+      <inertia
+        ixx="1.1484E-06"
+        ixy="-6.4586E-21"
+        ixz="4.2976E-21"
+        iyy="3.054E-06"
+        iyz="-4.0935E-21"
+        izz="1.9056E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb1_link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.6 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb1_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="limb1_link3_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="-1.011 1.5812E-17 9.992E-16" />
+    <parent
+      link="limb1_link2" />
+    <child
+      link="limb1_link3" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+  <link
+    name="limb1_link3">
+    <inertial>
+      <origin
+        xyz="2.77555756156289E-16 2.35922392732846E-16 0.0897146998141934"
+        rpy="0 0 0" />
+      <mass
+        value="0.016347199026062" />
+      <inertia
+        ixx="2.68392253477096E-05"
+        ixy="-2.11758236813575E-21"
+        ixz="-8.30627538597649E-20"
+        iyy="2.68392253477097E-05"
+        iyz="-7.35838744804189E-20"
+        izz="-4.4505542700943E-22" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb1_link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.807843137254902 0.843137254901961 0.905882352941176 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb1_link3.STL" />
+      </geometry>
+    </collision>
+  </link> 
+
+  <joint
+    name="limb1_link4_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0.246"
+      rpy="-7.7716E-16 4.4409E-16 -1.3715" />
+    <parent
+      link="limb1_link3" />
+    <child
+      link="limb1_link4" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+
+  <link
+    name="limb1_link4">
+    <inertial>
+      <origin
+        xyz="-1.38777878078145E-17 8.32667268468867E-17 -0.0276585619232839"
+        rpy="0 0 0" />
+      <mass
+        value="0.0131531172795061" />
+      <inertia
+        ixx="3.31385154320057E-06"
+        ixy="1.58818677610181E-22"
+        ixz="-4.44022992698453E-21"
+        iyy="3.31385154320057E-06"
+        iyz="9.140715571185E-21"
+        izz="-3.19179596330364E-22" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb1_link4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.807843137254902 0.843137254901961 0.905882352941176 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb1_link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="limb1_link5_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="2.3798 2.7756E-17 -3.1416" />
+    <parent
+      link="limb1_link4" />
+    <child
+      link="limb1_link5" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+  <link
+    name="limb1_link5">
+    <inertial>
+      <origin
+        xyz="6.93889390390723E-17 -5.55111512312578E-17 -0.00700691424122217"
+        rpy="0 0 0" />
+      <mass
+        value="0.018552497319415" />
+      <inertia
+        ixx="6.59042502132004E-07"
+        ixy="-6.3395122146064E-21"
+        ixz="-1.0311752680138E-20"
+        iyy="2.56461890947715E-06"
+        iyz="-2.04860999346998E-21"
+        izz="1.90557640734514E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb1_link5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.6 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb1_link5.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!limb2!!!!!!!!!!!!!!!!!!!!!!!! -->
+  <joint
+    name="limb2_link1_joint"
+    type="prismatic">
+    <origin
+      xyz="0.24382 -0.17253 0.085659"
+      rpy="0 0 2.618" />
+    <parent
+      link="base_link" />
+    <child
+      link="limb2_link1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.0456446"
+      upper="0.1758554"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+  <link
+    name="limb2_link1">
+    <inertial>
+      <origin
+        xyz="0.0075301 -2.5935E-05 9.6255E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.047388" />
+      <inertia
+        ixx="2.2595E-10"
+        ixy="-7.5456E-09"
+        ixz="2.8004E-08"
+        iyy="4.1578E-06"
+        iyz="5.676E-11"
+        izz="4.1576E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb1_link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb1_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="limb2_link2_joint"
+    type="continuous">
+    <origin
+      xyz="0.058 0 0"
+      rpy="1.5708 -0.16001 1.5708" />
+    <parent
+      link="limb2_link1" />
+    <child
+      link="limb2_link2" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+
+  <link
+    name="limb2_link2">
+    <inertial>
+      <origin
+        xyz="-2.7756E-17 -1.1102E-16 -0.0083909"
+        rpy="0 0 0" />
+      <mass
+        value="0.019958" />
+      <inertia
+        ixx="1.1484E-06"
+        ixy="-1.8264E-21"
+        ixz="1.0295E-20"
+        iyy="3.054E-06"
+        iyz="1.9768E-20"
+        izz="1.9056E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb1_link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.6 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb1_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="limb2_link3_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="-0.74327 -1.4303E-15 1.9429E-16" />
+    <parent
+      link="limb2_link2" />
+    <child
+      link="limb2_link3" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+  <link
+    name="limb2_link3">
+    <inertial>
+      <origin
+        xyz="-4.1633E-17 -2.7756E-17 0.089715"
+        rpy="0 0 0" />
+      <mass
+        value="0.016347" />
+      <inertia
+        ixx="2.6839E-05"
+        ixy="1.9058E-21"
+        ixz="-6.3969E-21"
+        iyy="2.6839E-05"
+        iyz="4.9053E-22"
+        izz="3.6776E-22" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb1_link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.80784 0.84314 0.90588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb1_link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="limb2_link4_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0.246"
+      rpy="1.1102E-16 0 0.65345" />
+    <parent
+      link="limb2_link3" />
+    <child
+      link="limb2_link4" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+
+  <link
+    name="limb2_link4">
+    <inertial>
+      <origin
+        xyz="1.1102E-16 1.6653E-16 -0.027659"
+        rpy="0 0 0" />
+      <mass
+        value="0.013153" />
+      <inertia
+        ixx="3.3139E-06"
+        ixy="2.1176E-22"
+        ixz="2.5636E-21"
+        iyy="3.3139E-06"
+        iyz="8.9947E-21"
+        izz="1.3639E-22" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb1_link4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.80784 0.84314 0.90588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb1_link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="limb2_link5_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="2.1941 1.1102E-16 3.1416" />
+    <parent
+      link="limb2_link4" />
+    <child
+      link="limb2_link5" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+  <link
+    name="limb2_link5">
+    <inertial>
+      <origin
+        xyz="-5.5511E-17 5.5511E-17 -0.0070069"
+        rpy="0 0 0" />
+      <mass
+        value="0.018552" />
+      <inertia
+        ixx="6.5904E-07"
+        ixy="-7.0674E-21"
+        ixz="3.2064E-21"
+        iyy="2.5646E-06"
+        iyz="-2.7338E-22"
+        izz="1.9056E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb1_link5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.6 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb1_link5.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!limb3!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+  <joint
+    name="limb3_link1_joint"
+    type="prismatic">
+    <origin
+      xyz="-0.24382 -0.17253 0.085659"
+      rpy="0 0 0.5236" />
+    <parent
+      link="base_link" />
+    <child
+      link="limb3_link1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.0456446"
+      upper="0.1758554"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+  <link
+    name="limb3_link1">
+    <inertial>
+      <origin
+        xyz="0.0075301 -2.5935E-05 9.6255E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.047388" />
+      <inertia
+        ixx="2.2595E-10"
+        ixy="-7.5456E-09"
+        ixz="2.8004E-08"
+        iyy="4.1578E-06"
+        iyz="5.676E-11"
+        izz="4.1576E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb1_link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb1_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="limb3_link2_joint"
+    type="continuous">
+    <origin
+      xyz="0.058 0 0"
+      rpy="-1.5708 -0.16001 -1.5708" />
+    <parent
+      link="limb3_link1" />
+    <child
+      link="limb3_link2" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+
+  <link
+    name="limb3_link2">
+    <inertial>
+      <origin
+        xyz="-6.93889390390723E-17 1.11022302462516E-16 -0.00839086892245161"
+        rpy="0 0 0" />
+      <mass
+        value="0.0199578720378376" />
+      <inertia
+        ixx="1.14844209154471E-06"
+        ixy="8.470329472543E-22"
+        ixz="-1.05173886515005E-20"
+        iyy="3.05401387558816E-06"
+        iyz="-1.06218584596003E-20"
+        izz="1.90557178404344E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb1_link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.6 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb1_link2.STL" />
+      </geometry>
+    </collision>
+  </link> 
+
+  <joint
+    name="limb3_link3_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0.74327 -9.4524E-16 2.7756E-17" />
+    <parent
+      link="limb3_link2" />
+    <child
+      link="limb3_link3" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+  <link
+    name="limb3_link3">
+    <inertial>
+      <origin
+        xyz="1.38777878078145E-17 3.05311331771918E-16 0.089714699814193"
+        rpy="0 0 0" />
+      <mass
+        value="0.016347199026062" />
+      <inertia
+        ixx="2.68392253477092E-05"
+        ixy="2.11758236813575E-22"
+        ixz="1.75230454692168E-20"
+        iyy="2.68392253477093E-05"
+        iyz="-8.52485903055817E-20"
+        izz="-1.10052642813122E-21" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb1_link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.807843137254902 0.843137254901961 0.905882352941176 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb1_link3.STL" />
+      </geometry>
+    </collision>
+  </link>  
+
+  <joint
+    name="limb3_link4_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0.246"
+      rpy="-5.5511E-16 -6.1062E-16 -0.65345" />
+    <parent
+      link="limb3_link3" />
+    <child
+      link="limb3_link4" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+
+  <link
+    name="limb3_link4">
+    <inertial>
+      <origin
+        xyz="0 1.11022302462516E-16 -0.0276585619232839"
+        rpy="0 0 0" />
+      <mass
+        value="0.0131531172795061" />
+      <inertia
+        ixx="3.31385154320058E-06"
+        ixy="-5.29395592033938E-23"
+        ixz="5.36012261397134E-21"
+        iyy="3.31385154320058E-06"
+        iyz="3.98758687392377E-21"
+        izz="1.26051438492093E-22" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb1_link4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.807843137254902 0.843137254901961 0.905882352941176 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb1_link4.STL" />
+      </geometry>
+    </collision>
+  </link> 
+
+  <joint
+    name="limb3_link5_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="2.1941 4.4409E-16 1.1102E-16" />
+    <parent
+      link="limb3_link4" />
+    <child
+      link="limb3_link5" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+  <link
+    name="limb3_link5">
+    <inertial>
+      <origin
+        xyz="2.77555756156289E-17 0 -0.00700691424122217"
+        rpy="0 0 0" />
+      <mass
+        value="0.018552497319415" />
+      <inertia
+        ixx="6.59042502132005E-07"
+        ixy="9.84675801183124E-21"
+        ixz="-6.55681444840788E-22"
+        iyy="2.56461890947713E-06"
+        iyz="5.15003833969146E-21"
+        izz="1.90557640734513E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb1_link5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.6 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb1_link5.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!limb4!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+  <joint
+    name="limb4_link1_joint"
+    type="prismatic">
+    <origin
+      xyz="-0.257 0.12829 0.087145"
+      rpy="0 0 -1.0472" />
+    <parent
+      link="base_link" />
+    <child
+      link="limb4_link1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.0456446"
+      upper="0.1758554"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+  <link
+    name="limb4_link1">
+    <inertial>
+      <origin
+        xyz="0.0075301 -2.5935E-05 9.6255E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.047388" />
+      <inertia
+        ixx="2.2595E-10"
+        ixy="-7.5456E-09"
+        ixz="2.8004E-08"
+        iyy="4.1578E-06"
+        iyz="5.676E-11"
+        izz="4.1576E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb1_link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb1_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="limb4_link2_joint"
+    type="continuous">
+    <origin
+      xyz="0.058 0 0"
+      rpy="1.5708 0.67413 1.5708" />
+    <parent
+      link="limb4_link1" />
+    <child
+      link="limb4_link2" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+
+  <link
+    name="limb4_link2">
+    <inertial>
+      <origin
+        xyz="5.55111512312578E-17 0 -0.00839086892245156"
+        rpy="0 0 0" />
+      <mass
+        value="0.0199578720378376" />
+      <inertia
+        ixx="1.14844209154472E-06"
+        ixy="-1.25466755312043E-20"
+        ixz="-1.1968400761243E-20"
+        iyy="3.05401387558811E-06"
+        iyz="-1.615784365359E-20"
+        izz="1.90557178404339E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb1_link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.6 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb1_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="limb4_link3_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="1.011 -6.6972E-16 -3.1416" />
+    <parent
+      link="limb4_link2" />
+    <child
+      link="limb4_link3" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+  <link
+    name="limb4_link3">
+    <inertial>
+      <origin
+        xyz="5.55111512312578E-17 6.93889390390723E-17 0.0897146998141931"
+        rpy="0 0 0" />
+      <mass
+        value="0.016347199026062" />
+      <inertia
+        ixx="2.68392253477093E-05"
+        ixy="1.6940658945086E-21"
+        ixz="-1.72551011895521E-20"
+        iyy="2.68392253477093E-05"
+        iyz="-1.61446506639883E-20"
+        izz="2.26137980814788E-21" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb1_link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.807843137254902 0.843137254901961 0.905882352941176 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb1_link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="limb4_link4_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0.246"
+      rpy="-2.2204E-16 -1.3878E-16 1.3715" />
+    <parent
+      link="limb4_link3" />
+    <child
+      link="limb4_link4" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+
+  <link
+    name="limb4_link4">
+    <inertial>
+      <origin
+        xyz="-4.85722573273506E-17 2.4980018054066E-16 -0.0276585619232836"
+        rpy="0 0 0" />
+      <mass
+        value="0.0131531172795061" />
+      <inertia
+        ixx="3.31385154320052E-06"
+        ixy="3.17637355220363E-22"
+        ixz="-7.18871507894477E-21"
+        iyy="3.31385154320052E-06"
+        iyz="2.43805815429429E-20"
+        izz="1.27879491686309E-22" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb1_link4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.807843137254902 0.843137254901961 0.905882352941176 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb1_link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="limb4_link5_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="2.3798 3.3307E-16 3.6082E-16" />
+    <parent
+      link="limb4_link4" />
+    <child
+      link="limb4_link5" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+  <link
+    name="limb4_link5">
+    <inertial>
+      <origin
+        xyz="2.08166817117217E-17 5.55111512312578E-17 -0.00700691424122215"
+        rpy="0 0 0" />
+      <mass
+        value="0.018552497319415" />
+      <inertia
+        ixx="6.59042502132005E-07"
+        ixy="-2.23669637634339E-21"
+        ixz="-2.81818723405482E-21"
+        iyy="2.56461890947715E-06"
+        iyz="-2.11774349367621E-21"
+        izz="1.90557640734514E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb1_link5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.6 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb1_link5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <!-- !!!!!!!!!!!!!!!!!!!!!!!!limb5!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+  <joint
+    name="limb5_link1_joint"
+    type="prismatic">
+    <origin
+      xyz="-0.175 -0.09 -0.046"
+      rpy="-1.5708 1.5708 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="limb5_link1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.1"
+      upper="0.2"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+  <link
+    name="limb5_link1">
+    <inertial>
+      <origin
+        xyz="0.040673 -0.25629 0.011002"
+        rpy="0 0 0" />
+      <mass
+        value="0.62178" />
+      <inertia
+        ixx="0.012402"
+        ixy="0.00021337"
+        ixz="-4.7882E-05"
+        iyy="0.00020158"
+        iyz="0.00044055"
+        izz="0.012493" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb5_link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb5_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="limb5_link2_joint"
+    type="prismatic">
+    <origin
+      xyz="0.0475 -0.175 0.021"
+      rpy="-1.5708 -1.5708 0" />
+    <parent
+      link="limb5_link1" />
+    <child
+      link="limb5_link2" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-0.2"
+      upper="0.2"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+  <link
+    name="limb5_link2">
+    <inertial>
+      <origin
+        xyz="0.02986 0.078211 0.00036186"
+        rpy="0 0 0" />
+      <mass
+        value="0.43004" />
+      <inertia
+        ixx="0.0055683"
+        ixy="-0.00022117"
+        ixz="-1.1114E-07"
+        iyy="4.0186E-05"
+        iyz="1.3165E-05"
+        izz="0.0056084" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb5_link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb5_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="limb5_link3_joint"
+    type="prismatic">
+    <origin
+      xyz="0.036 0.0275 0"
+      rpy="1.5708 -6.123E-17 -6.123E-17" />
+    <parent
+      link="limb5_link2" />
+    <child
+      link="limb5_link3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.1"
+      upper="0.2"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+  <link
+    name="limb5_link3">
+    <inertial>
+      <origin
+        xyz="0.018715 -1.4818E-05 0.059212"
+        rpy="0 0 0" />
+      <mass
+        value="0.082907" />
+      <inertia
+        ixx="0.00041071"
+        ixy="-2.1293E-08"
+        ixz="-6.9984E-05"
+        iyy="0.00042791"
+        iyz="-7.2601E-08"
+        izz="1.7208E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb5_link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb5_link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint
+    name="limb5_link4_joint"
+    type="revolute">
+    <origin
+      xyz="0.033 0 0.265"
+      rpy="1.5708 0 -6.123E-17" />
+    <parent
+      link="limb5_link3" />
+    <child
+      link="limb5_link4" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.75"
+      upper="1.75"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+  <link
+    name="limb5_link4">
+    <inertial>
+      <origin
+        xyz="0 5.5511E-17 7.284E-20"
+        rpy="0 0 0" />
+      <mass
+        value="0.0021804" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb5_link4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.80784 0.84314 0.90588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/limb5_link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+<!-- !!!!!!!!!!!!!!!!!!!!moveing platform!!!!!!!!!!!!!!!!!!!! -->
+  <joint
+    name="move_platform_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0.25"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="move_platform" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+
+  <link
+    name="move_platform">
+    <inertial>
+      <origin
+        xyz="1.12952778800589E-09 -1.29548002418198E-06 -0.00824448833449409"
+        rpy="0 0 0" />
+      <mass
+        value="0.162097676027693" />
+      <inertia
+        ixx="0.000211525598211022"
+        ixy="-2.35543345488949E-16"
+        ixz="1.57894931553872E-11"
+        iyy="0.000210624065261381"
+        iyz="1.73208729873884E-09"
+        izz="8.89160350199101E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/move_platform.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.6 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/move_platform.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="motor_spindle_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0.092"
+      rpy="0 0 1.1838E-15" />
+    <parent
+      link="move_platform" />
+    <child
+      link="motor_spindle" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+
+  <link
+    name="motor_spindle">
+    <inertial>
+      <origin
+        xyz="-4.27125461478565E-19 5.20417042793042E-18 -0.0783416005168426"
+        rpy="0 0 0" />
+      <mass
+        value="0.132375566305138" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/motor_spindle.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0.6 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://faraday_support/meshes/motor_spindle.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+</robot>
